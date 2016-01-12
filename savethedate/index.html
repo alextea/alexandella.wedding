@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    #background-cell {
+      background-image: url('http://dev.alexandella.wedding/savethedate/images/background-pink-blue.png');
+      background-attachment: fixed;
+    }
+
     @media only screen and (min-device-width: 541px) {
       .content {
         width: 540px !important;
@@ -15,16 +20,26 @@
     }
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      body {
+      #background-cell {
         background-size: 25%!important;
-        background-image: url('images/background-pink-blue-2x.png')!important;
+        background-image: url('http://dev.alexandella.wedding/savethedate/images/background-pink-blue-2x.png')!important;
       }
     }
   </style>
 </head>
  
-<body style="background-image: url('images/background-pink-blue.png'); background-repeat: repeat; background-attachment: fixed;"  background="images/background-pink-blue.png">
- 
+<body>
+
+<div style="background-color:#7b97af;">
+  <!--[if gte mso 9]>
+  <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+    <v:fill type="tile" src="http://dev.alexandella.wedding/savethedate/images/background-pink-blue.png" color="#7b97af"/>
+  </v:background>
+  <![endif]-->
+  <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td valign="top" align="left" background="http://dev.alexandella.wedding/savethedate/images/background-pink-blue-2x.png" id="background-cell">
+
 <!--[if (gte mso 9)|(IE)]>
   <table width="540" align="center" cellpadding="0" cellspacing="0" border="0">
     <tr>
@@ -74,6 +89,11 @@
     </tr>
 </table>
 <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+</div>
  
 </body>
 </html>
