@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body {
+    #background-cell {
       background-image: url('http://dev.alexandella.wedding/savethedate/images/background-pink-blue.png');
       background-attachment: fixed;
     }
@@ -20,7 +20,7 @@
     }
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      body {
+      #background-cell {
         background-size: 25%!important;
         background-image: url('http://dev.alexandella.wedding/savethedate/images/background-pink-blue-2x.png')!important;
       }
@@ -30,10 +30,15 @@
  
 <body>
 
-<div>
+<div style="background-color:#7b97af;">
+  <!--[if gte mso 9]>
+  <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+    <v:fill type="tile" src="http://dev.alexandella.wedding/savethedate/images/background-pink-blue.png" color="#7b97af"/>
+  </v:background>
+  <![endif]-->
   <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr>
-      <td valign="top" align="center">
+      <td valign="top" align="left" background="http://dev.alexandella.wedding/savethedate/images/background-pink-blue-2x.png" id="background-cell">
 
 <!--[if (gte mso 9)|(IE)]>
   <table width="540" align="center" cellpadding="0" cellspacing="0" border="0">
@@ -51,6 +56,34 @@
               <img src="http://dev.alexandella.wedding/savethedate/images/save-the-date-540-2x.png" alt="Save the date" style="width:100%;" />
             </td>
             <td width="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="20" colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="20">&nbsp;</td>
+            <td style="background: #fff; font-family: sans-serif; font-size: 16px; line-height: 1.25; color: #325a85;">
+              <div style="padding:20px;">
+                <p>Dear *|FNAME|*</p>
+
+                <h2 style="color: #ff42ac; font-weight: 800;">Save the date</h2>
+
+                <p>Ella &amp; Alex are getting married</p>
+
+                <p>6 August 2016</p>
+
+                <p>Southern Pavilion<br>
+                  Worthing Pier<br>
+                  West Sussex
+                </p>
+
+                <p style="font-size:12px;"><i>* invitation to follow</i></p>
+              </div>
+            </td>
+            <td width="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="60" colspan="3">&nbsp;</td>
           </tr>
         </table>
  
