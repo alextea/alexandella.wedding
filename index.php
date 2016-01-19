@@ -1,1 +1,1 @@
-<?php header('Location: http://dev.alexandella.wedding/savethedate'); ?>
+<?php header('Location: http://alexandella.wedding/savethedate'); ?>
