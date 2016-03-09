@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.3688, 50.807]
+    },
+    "properties": {
+      "title": "Southern Pavilion",
+      "marker-symbol": "marker",
+      "marker-color": "#ff46b0"
+    }
+  }]
+}

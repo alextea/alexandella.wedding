@@ -1,0 +1,23 @@
+$pink: #fc4cb0;
+
+$blue: #375a87;
+$blue-10: lighten($blue, 90%);
+
+$purple: #351b5d;
+
+// Semantic colour names
+$link-colour: blue;
+$link-active-colour: blue;
+$link-hover-colour: blue;
+$link-visited-colour: blue;
+$button-colour: #00823b;
+$focus-colour: yellow;
+$text-colour: black;             // Standard text colour
+$secondary-text-colour: black;  // Section headers, help text etc.
+$border-colour: #333333;          // Borders, seperators, rules, keylines etc.
+$panel-colour: #666666;           // Related links panel, page footer etc.
+$canvas-colour: #999999;          // Page background
+$highlight-colour: #aaaaaa;       // Table stripes etc.
+$page-colour: white;             // The page
+$error-colour: red;              // Error text and border colour
+$error-background: red;       // Error background colour

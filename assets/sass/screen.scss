@@ -4,3 +4,134 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+
+// GOV.UK front end toolkit
+// Sass variables, mixins and functions
+// https://github.com/alphagov/govuk_frontend_toolkit/tree/master/stylesheets
+
+// Settings (variables)
+@import "toolkit/colours";                                // Colour variables
+@import "toolkit/measurements";                           // Widths and gutter variables
+
+// Mixins
+@import "toolkit/conditionals";                           // Media query mixin
+@import "toolkit/device-pixels";                          // Retina image mixin
+@import "toolkit/grid_layout";                            // Basic grid layout mixin
+@import "toolkit/typography";                             // Core bold and heading mixins, also external links
+@import "toolkit/shims";                                  // Inline block mixin, clearfix placeholder
+
+body {
+  @include body-font;
+
+  color: $blue;
+  background-color: rgba($blue, 0.1);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  &:link {
+    color: $pink;
+  }
+}
+
+h1 {
+  @extend %tablet-bold-oblique;
+  font-size: 48px;
+  color: $pink;
+  text-transform: uppercase;
+}
+
+h2 {
+  @extend %tablet-thin-oblique;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: $pink;
+
+  margin: 0 0 -40px 0;
+
+  mix-blend-mode: multiply;
+  z-order: 100;
+
+  @include media('tablet') {
+    margin-left: -12.5%;
+  }
+}
+
+h3 {
+  @extend %nimbus;
+  color: $purple;
+  font-size: 24px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid $purple;
+    margin: -4px 0 8px 0;
+  }
+}
+
+p + h3 {
+  margin-top: $gutter;
+}
+
+h4 {
+  @extend %nimbus;
+  color: $purple;
+}
+
+#navigation {
+  margin: $gutter auto ($gutter*2) auto;
+
+  ul {
+    @include flexbox();
+    flex-flow: row wrap;
+
+    li {
+      @extend %tablet-thin-oblique;
+      font-size: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &:after {
+        content: "*";
+        margin: 0 $gutter-half;
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+          margin: none;
+        }
+      }
+
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+#content {
+  margin: 0 30px;
+  @extend %contain-floats;
+}
+
+section {
+  max-width: 600px;
+  float: right;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+}
