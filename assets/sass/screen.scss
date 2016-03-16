@@ -21,96 +21,48 @@
 @import "toolkit/shims";                                  // Inline block mixin, clearfix placeholder
 
 body {
-  @include body-font;
-
-  color: $blue;
-  background-color: rgba($blue, 0.1);
-}
-
-p {
-  margin-bottom: 1em;
-}
-
-a {
-  &:link {
-    color: $pink;
-  }
-}
-
-h1 {
-  @extend %tablet-bold-oblique;
-  font-size: 48px;
-  color: $pink;
-  text-transform: uppercase;
-}
-
-h2 {
-  @extend %tablet-thin-oblique;
-  font-size: 60px;
-  text-transform: uppercase;
-  color: $pink;
-
-  margin: 0 0 -40px 0;
-
-  mix-blend-mode: multiply;
-  z-order: 100;
-
-  @include media('tablet') {
-    margin-left: -12.5%;
-  }
-}
-
-h3 {
-  @extend %nimbus;
-  color: $purple;
-  font-size: 24px;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 3px solid $purple;
-    margin: -4px 0 8px 0;
-  }
-}
-
-p + h3 {
-  margin-top: $gutter;
-}
-
-h4 {
-  @extend %nimbus;
-  color: $purple;
+  background-color: $blue-10;
 }
 
 #navigation {
   margin: $gutter auto ($gutter*2) auto;
+  border: 1px solid $pink-70;
+  border-width: 1px 0;
 
   ul {
     @include flexbox();
+    justify-content: space-between;
     flex-flow: row wrap;
 
     li {
       @extend %tablet-thin-oblique;
       font-size: 30px;
       text-transform: uppercase;
+      text-align: center;
       letter-spacing: 2px;
 
+      flex-grow: 1;
+
+      margin-right:24px;
+      margin-left:24px;
+      position:relative;
+
+      &:first-child {margin-left:0;}
+      &:last-child {margin-right:0;
+        &:after {content:none;}
+      }
       &:after {
-        content: "*";
-        margin: 0 $gutter-half;
+        content:"*";
+        position:absolute;
+        width:48px;
+        right:-48px;
       }
-
-      &:last-child {
-        &:after {
-          content: "";
-          margin: none;
-        }
-      }
-
-
       a {
         text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
       }
     }
   }

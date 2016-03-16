@@ -13,7 +13,12 @@
 
 $is-print: false !default;
 
-%nimbus {
+%nimbus-reg {
+  font-family: "nimbus-sans-extended";
+  font-weight: 400;
+}
+
+%nimbus-bold {
   font-family: "nimbus-sans-extended";
   font-weight: 700;
 }
@@ -41,7 +46,7 @@ $is-print: false !default;
 }
 
 @mixin body-font() {
-  @extend %soleil-book;
+  @extend %nimbus-reg;
   font-size: 16px;
   line-height: (25 / 16);
 
@@ -51,204 +56,81 @@ $is-print: false !default;
   }
 }
 
-@mixin _core-font-generator($font-size: 19px, $font-size-640: 16px, $font-size-print: 14pt, $line-height: (25 / 19), $line-height-640: (20 / 16), $font-weight: 400) {
-  font-size: $font-size-640;
-  line-height: $line-height-640;
-  font-weight: $font-weight;
-  text-transform: none;
+body {
+  @include body-font;
+  color: $text-colour;
+}
 
-  @include media(tablet) {
-    font-size: $font-size;
-    line-height: $line-height;
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  &:link {
+    color: $link-colour;
   }
 
-  @if $is-print {
-    font-size: $font-size-print;
+  &:active {
+    color: $link-active-colour;
   }
-}
-// scss-lint:enable NameFormat
 
-@mixin core-80($line-height: (80 / 80), $line-height-640: (55 / 53), $font-weight: 400) {
-  $font-size: 80px;
-  $font-size-640: 53px;
-  $font-size-print: 28pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
+  &:hover {
+    color: $link-hover-colour;
+  }
 
-@mixin core-48($line-height: (50 / 48), $line-height-640: (35 / 32), $font-weight: 400) {
-  $font-size: 48px;
-  $font-size-640: 32px;
-  $font-size-print: 18pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-36($line-height: (40 / 36), $line-height-640: (25 / 24), $font-weight: 400) {
-  $font-size: 36px;
-  $font-size-640: 24px;
-  $font-size-print: 18pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-27($line-height: (30 / 27), $line-height-640: (20 / 18), $font-weight: 400) {
-  $font-size: 27px;
-  $font-size-640: 20px;
-  $font-size-print: 16pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-24($line-height: (30 / 24), $line-height-640: (24 / 20), $font-weight: 400) {
-  $font-size: 24px;
-  $font-size-640: 18px;
-  $font-size-print: 16pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-19($line-height: (25 / 19), $line-height-640: (20 / 16), $font-weight: 400) {
-  $font-size: 19px;
-  $font-size-640: 16px;
-  $font-size-print: 14pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-16($line-height: (20 / 16), $line-height-640: (16 / 14), $font-weight: 400) {
-  $font-size: 16px;
-  $font-size-640: 14px;
-  $font-size-print: 12pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin core-14($line-height: (20 / 14), $line-height-640: (15 / 12), $font-weight: 400) {
-  $font-size: 14px;
-  $font-size-640: 12px;
-  $font-size-print: 11pt;
-  @include _core-font-generator($font-size, $font-size-640, $font-size-print, $line-height, $line-height-640, $font-weight);
-}
-
-@mixin bold-80($line-height: (80 / 80), $line-height-640: (55 / 53)) {
-  @include core-80($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-48($line-height: (50 / 48), $line-height-640: (35 / 32)) {
-  @include core-48($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-36($line-height: (40 / 36), $line-height-640: (25 / 24)) {
-  @include core-36($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-27($line-height: (30 / 27), $line-height-640: (20 / 18)) {
-  @include core-27($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-24($line-height: (30 / 24), $line-height-640: (24 / 20)) {
-  @include core-24($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-19($line-height: (25 / 19), $line-height-640: (20 / 16)) {
-  @include core-19($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-16($line-height: (20 / 16), $line-height-640: (16 / 14)) {
-  @include core-16($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin bold-14($line-height: (20 / 14), $line-height-640: (15 / 12)) {
-  @include core-14($line-height, $line-height-640, $font-weight: 700);
-}
-
-@mixin heading-80() {
-  @include core-80();
-
-  padding-top: 8px;
-  padding-bottom: 7px;
-
-  @include media(tablet) {
-    padding-top: 6px;
-    padding-bottom: 14px;
+  &:visited {
+    color: $link-visited-colour;
   }
 }
 
-@mixin heading-48() {
-  @include core-48();
+h1 {
+  @extend %tablet-bold-oblique;
+  font-size: 48px;
+  color: $pink;
+  text-transform: uppercase;
+}
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+h2 {
+  @extend %tablet-thin-oblique;
+  font-size: 60px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $pink;
 
-  @include media(tablet) {
-    padding-top: 7px;
-    padding-bottom: 13px;
+  margin: $gutter 0 (-$gutter) 0;
+
+  mix-blend-mode: multiply;
+  z-order: 100;
+
+  @include media($min-width: 705px) {
+    margin-left: -75px;
   }
 }
 
-@mixin heading-36() {
-  @include core-36();
+p + h2 {
+  margin-bottom: 0;
+}
 
-  padding-top: 8px;
-  padding-bottom: 7px;
+h3 {
+  @extend %nimbus-bold;
+  color: $purple;
+  font-size: 24px;
 
-  @include media(tablet) {
-    padding-top: 6px;
-    padding-bottom: 9px;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid $purple;
+    margin: -4px 0 8px 0;
   }
 }
 
-@mixin heading-27() {
-  @include core-27();
-
-  padding-top: 8px;
-  padding-bottom: 7px;
-
-  @include media(tablet) {
-    padding-top: 4px;
-    padding-bottom: 6px;
-  }
+p + h3 {
+  margin-top: $gutter;
 }
 
-@mixin heading-24() {
-  @include core-24();
-
-  padding-top: 9px;
-  padding-bottom: 6px;
-
-  @include media(tablet) {
-    padding-top: 6px;
-    padding-bottom: 4px;
-  }
-}
-
-@mixin copy-19() {
-  @include core-19();
-
-  padding-top: 2px;
-  padding-bottom: 8px;
-
-  @include media(tablet) {
-    padding-top: 0;
-    padding-bottom: 5px;
-  }
-}
-
-@mixin copy-16() {
-  @include core-16();
-
-  padding-top: 8px;
-  padding-bottom: 7px;
-
-  @include media(tablet) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-}
-
-@mixin copy-14() {
-  @include core-14();
-
-  padding-top: 8px;
-  padding-bottom: 7px;
-
-  @include media(tablet) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+h4 {
+  @extend %nimbus-bold;
+  color: $purple;
 }
 

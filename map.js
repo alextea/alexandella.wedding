@@ -21,7 +21,7 @@ map.on('style.load', function() {
         },
         'properties': {
           'title': 'Southern Pavillion',
-          'marker-symbol': 'marker',
+          'marker-symbol': '1',
           'marker-color': '#ff46b0'
         }
       }]
@@ -34,7 +34,6 @@ map.on('style.load', function() {
     "source": "markers",
     "layout": {
       "icon-image": "{marker-symbol}-15",
-      "icon-color": "{marker-color}",
       "text-field": "{title}",
       "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-offset": [0, 0.6],

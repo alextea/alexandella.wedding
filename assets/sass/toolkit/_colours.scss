@@ -1,23 +1,34 @@
-$pink: #fc4cb0;
+$pink: #ff69bc;
+$pink-10: tint($pink, 90%);
+$pink-20: tint($pink, 80%);
+$pink-30: tint($pink, 70%);
+$pink-40: tint($pink, 60%);
+$pink-50: tint($pink, 50%);
+$pink-60: tint($pink, 40%);
+$pink-70: tint($pink, 30%);
+$pink-80: tint($pink, 20%);
+$pink-90: tint($pink, 10%);
 
-$blue: #375a87;
-$blue-10: lighten($blue, 90%);
+$blue: #445589;
+$blue-10: #ecedf3;
+$blue-20: #d8dae6;
+$blue-30: #c4c7d9;
+$blue-40: #b3b8ce;
+$blue-50: #9fa5c1;
+$blue-60: #8d95b5;
+$blue-70: #7c85ab;
+$blue-80: #6a749e;
+$blue-90: #586493;
 
 $purple: #351b5d;
 
 // Semantic colour names
-$link-colour: blue;
-$link-active-colour: blue;
-$link-hover-colour: blue;
-$link-visited-colour: blue;
-$button-colour: #00823b;
-$focus-colour: yellow;
-$text-colour: black;             // Standard text colour
-$secondary-text-colour: black;  // Section headers, help text etc.
-$border-colour: #333333;          // Borders, seperators, rules, keylines etc.
-$panel-colour: #666666;           // Related links panel, page footer etc.
-$canvas-colour: #999999;          // Page background
-$highlight-colour: #aaaaaa;       // Table stripes etc.
-$page-colour: white;             // The page
-$error-colour: red;              // Error text and border colour
-$error-background: red;       // Error background colour
+$link-colour: $pink;
+$link-active-colour: $pink-20;
+$link-hover-colour: $pink-80;
+$link-visited-colour: $pink;
+$text-colour: $blue;
+$secondary-text-colour: $purple;
+$page-colour: $blue-10;
+$error-colour: red;
+$error-background: red;

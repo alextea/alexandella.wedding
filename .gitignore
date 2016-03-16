@@ -2,3 +2,5 @@
 .AppleDouble
 .LSOverride
 .sass-cache
+assets/stylesheets/*.css
+assets/stylesheets/*.css.map
