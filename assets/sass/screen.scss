@@ -24,6 +24,32 @@ body {
   background-color: $blue-10;
 }
 
+#header {
+  h1 {
+    @extend %tablet-thin-oblique;
+    font-size: 40px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $blue;
+
+    margin: 0;
+  }
+
+  h2 {
+    @extend %tablet-thin-oblique;
+    font-size: 30px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $pink;
+
+    margin: 0;
+  }
+
+  p {
+
+  }
+}
+
 #navigation {
   margin: $gutter auto ($gutter*2) auto;
   border: 1px solid $pink-70;

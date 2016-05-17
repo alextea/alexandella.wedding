@@ -99,8 +99,8 @@ h2 {
 
   margin: $gutter 0 (-$gutter) 0;
 
-  mix-blend-mode: multiply;
-  z-order: 100;
+  // mix-blend-mode: multiply;
+  z-index: 100;
 
   @include media($min-width: 705px) {
     margin-left: -75px;

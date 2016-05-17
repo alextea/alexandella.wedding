@@ -1,39 +1,14 @@
-<!doctype html>
-<html class="" lang="">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Alex &amp; Ella's Wedding</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <script src="https://use.typekit.net/yib5cuo.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
-
-  <link rel="stylesheet" href="assets/stylesheets/screen.css">
-</head>
-<body>
+<?php 
+  $page_title = "Where – Ella &amp; Alex's Wedding";
+  include "includes/head.php";
+?>
 
   <div id="wrapper">
     <main id="content">
-      <header>
-        <h1>Alex &amp; Ella's Wedding</h1>
-        <h2>6 August 2016</h2>
-        <p>Southern Pavilion, Worthing Pier</p>
-      </header>
-
-      <nav id="navigation">
-        <ul>
-          <li><a href="/where">Where</a></li>
-          <li><a href="/when">When</a></li>
-          <li><a href="/rsvp">RSVP</a></li>
-          <li><a href="/gifts">Gifts</a></li>
-          <li><a href="/photos">Photos</a></li>
-        </ul>
-      </nav>
+      <?php 
+        $active = "where";
+        include "includes/header.php";
+      ?>
 
       <section id="where">
         <h1>Where</h1>
@@ -120,13 +95,4 @@
     </main>
   </div>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-  window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-  ga('create','UA-3502153-4','auto');ga('send','pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-
-  <script src='map.js'></script>
-</body>
-</html>
+<?php include "includes/footer.php"; ?>
