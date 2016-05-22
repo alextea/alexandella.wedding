@@ -143,11 +143,15 @@ legend {
   color: $text-colour;
 
   @include box-sizing(border-box);
-  width: percentage(2/3);
+  width: 100%;
 
   padding: 4px;
   background-color: white;
   border: 2px solid $pink-30;
+
+  @include media(tablet) {
+    width: percentage(2/3);
+  }
 }
 
 // Radio buttons
@@ -178,6 +182,7 @@ legend {
   color: $text-colour;
 
   @include box-sizing(border-box);
+  width: 100%;
 
   padding: 4px;
   background-color: white;
