@@ -84,10 +84,19 @@ a {
 }
 
 h1 {
-  @extend %tablet-bold-oblique;
-  font-size: 48px;
-  color: $pink;
+  @extend %tablet-thin-oblique;
+  font-size: 60px;
+  line-height: 1;
+  color: $purple;
   text-transform: uppercase;
+
+  margin: $gutter 0 $gutter 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  border-bottom: 6px solid $purple;
 }
 
 h2 {
@@ -104,6 +113,10 @@ h2 {
 
   @include media($min-width: 705px) {
     margin-left: -75px;
+  }
+
+  &:first-child {
+    margin-top: 0;
   }
 }
 
