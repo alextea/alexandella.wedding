@@ -20,6 +20,12 @@
 @import "toolkit/typography";                             // Core bold and heading mixins, also external links
 @import "toolkit/shims";                                  // Inline block mixin, clearfix placeholder
 
+// Forms
+@import "toolkit/design-patterns/buttons";
+@import "forms";
+@import "form-block-labels";
+@import "form-validation";
+
 body {
   background-color: $blue-10;
 }
@@ -147,3 +153,5 @@ section {
   width: 100%;
   height: 500px;
 }
+
+.js-enabled .js-hidden { display: none; }
