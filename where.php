@@ -1,11 +1,14 @@
-<?php 
+<?php
   $page_title = "Where – Ella &amp; Alex's Wedding";
   include "includes/head.php";
 ?>
 
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
+
   <div id="wrapper">
     <main id="content">
-      <?php 
+      <?php
         $active = "where";
         include "includes/header.php";
       ?>
@@ -94,5 +97,7 @@
       </section>
     </main>
   </div>
+
+  <script src="/assets/javascripts/map.js"></script>
 
 <?php include "includes/footer.php"; ?>
