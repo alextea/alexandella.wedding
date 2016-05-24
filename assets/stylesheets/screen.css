@@ -87,7 +87,7 @@ body, .form-hint, .form-control, .form-text-area, .error-message {
 }
 
 /* line 21, ../sass/toolkit/_typography.scss */
-h3, h4, .form-label {
+h3, h4, .form-label, .error-summary h2 {
   font-family: "nimbus-sans-extended";
   font-weight: 700;
 }
@@ -638,7 +638,7 @@ legend .form-label-bold {
 }
 /* line 12, ../sass/_form-validation.scss */
 .error .error-message {
-  color: red;
+  color: white;
   font-weight: bold;
 }
 /* line 18, ../sass/_form-validation.scss */
@@ -653,76 +653,83 @@ legend .form-label-bold {
 /* line 28, ../sass/_form-validation.scss */
 .error,
 .error-summary {
-  border-left: 4px solid red;
+  background-color: #ff69bc;
   padding-left: 10px;
 }
 @media (min-width: 641px) {
   /* line 28, ../sass/_form-validation.scss */
   .error,
   .error-summary {
-    border-left: 5px solid red;
     padding-left: 15px;
   }
 }
 
-/* line 41, ../sass/_form-validation.scss */
+/* line 38, ../sass/_form-validation.scss */
 .error-message {
   font-size: 16px;
   line-height: 1.5625;
+  color: white;
   display: block;
   clear: both;
   margin: 0;
   padding: 5px 0 7px 0;
 }
 @media (min-width: 641px) {
-  /* line 41, ../sass/_form-validation.scss */
+  /* line 38, ../sass/_form-validation.scss */
   .error-message {
     font-size: 20px;
     line-height: 1.57895;
   }
 }
 
-/* line 52, ../sass/_form-validation.scss */
+/* line 50, ../sass/_form-validation.scss */
 .error-summary {
-  border: 4px solid red;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  background-color: #ff69bc;
+  margin: 15px 0;
   padding: 15px 10px;
 }
 @media (min-width: 641px) {
-  /* line 52, ../sass/_form-validation.scss */
+  /* line 50, ../sass/_form-validation.scss */
   .error-summary {
-    border: 5px solid red;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px 15px 15px 15px;
   }
 }
-/* line 76, ../sass/_form-validation.scss */
-.error-summary:focus {
-  outline: 3px solid #ff69bc;
-}
-/* line 80, ../sass/_form-validation.scss */
+/* line 68, ../sass/_form-validation.scss */
 .error-summary .error-summary-heading {
   margin-top: 0;
 }
-/* line 84, ../sass/_form-validation.scss */
+/* line 72, ../sass/_form-validation.scss */
+.error-summary h2 {
+  margin: 0 0 30px 0;
+  font-size: 30px;
+  color: white;
+  text-transform: none;
+  font-style: normal;
+}
+/* line 82, ../sass/_form-validation.scss */
 .error-summary p {
+  color: white;
   margin-bottom: 10px;
 }
-/* line 88, ../sass/_form-validation.scss */
+/* line 87, ../sass/_form-validation.scss */
+.error-summary a {
+  color: white;
+}
+/* line 91, ../sass/_form-validation.scss */
 .error-summary .error-summary-list {
   padding-left: 0;
 }
 @media (min-width: 641px) {
-  /* line 91, ../sass/_form-validation.scss */
+  /* line 94, ../sass/_form-validation.scss */
   .error-summary .error-summary-list li {
     margin-bottom: 5px;
   }
 }
-/* line 98, ../sass/_form-validation.scss */
+/* line 101, ../sass/_form-validation.scss */
 .error-summary .error-summary-list a {
-  color: red;
+  color: white;
   font-weight: bold;
   text-decoration: underline;
 }
