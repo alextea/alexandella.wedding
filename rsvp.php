@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Password to use for SMTP authentication
     $mail->Password = $email_password;
     //Set who the message is to be sent from
-    $mail->setFrom($email_address, 'RSVP');
+    $mail->setFrom($email_address, $name);
     //Set an alternative reply-to address
     // $mail->addReplyTo('replyto@example.com', 'First Last');
     //Set who the message is to be sent to
