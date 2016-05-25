@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $dietery     = stripslashes(trim($_POST['form-dietery']));
   $dietery_details = stripslashes(trim($_POST['form-dietery-details']));
   $notes = stripslashes(trim($_POST['form-notes']));
-  $pattern = '/[\r\n]|Content-Type:|Bcc:|Cc:/i';
+  $pattern = '/Content-Type:|Bcc:|Cc:/i';
 
   if (preg_match($pattern, $name) || preg_match($pattern, $dietery_details) || preg_match($pattern, $notes)) {
     die("Header injection detected");
