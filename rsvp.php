@@ -5,7 +5,7 @@ require(__DIR__.'/../../email_config.php');
 
 $email_address = "rsvp@alexandella.wedding";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $name        = stripslashes(trim($_POST['form-name']));
   $attending   = stripslashes(trim($_POST['form-attend']));
   $dietery     = stripslashes(trim($_POST['form-dietery']));
@@ -17,10 +17,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     die("Header injection detected");
   }
 
-  if($name && $attending) {
+  if ($name != "" && $attending != "") {
     $subject = "[RSVP] $name";
+    if ($attending == "Yes") {
+      $subject .= " would love to come!";
+    } else {
+      $subject .= " can't make it unfortunately";
+    }
 
-    $body = "Name: $name\n Attending: $attending\n Dietery Requirements: $dietery\n";
+    $body  = "Name: $name\n";
+    $body .= "Attending: $attending\n";
+    $body .= "Dietery Requirements: $dietery\n";
+
     if ($dietery_details != "") {
       $body .= "Dietery Details: $dietery_details\n";
     }
@@ -34,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // 0 = off (for production use)
     // 1 = client messages
     // 2 = client and server messages
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 0;
     //Ask for HTML-friendly debug output
     $mail->Debugoutput = 'html';
     //Set the hostname of the mail server
@@ -58,11 +66,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail->Body = $body;
     //send the message, check for errors
     if (!$mail->send()) {
-        $error_msg = "Mailer Error: " . $mail->ErrorInfo;
+        $error_msg = "<p>Mailer Error: " . $mail->ErrorInfo."</p>";
         $hasError = true;
+        $serverError = true;
     } else {
       // echo "Message sent!";
       $emailSent = true;
+    }
+  } else {
+    $hasError = true;
+
+    if ($name == "") {
+      $error_msg = "<p>You need to enter your name.</p>";
+    } else if ($attending == ""){
+      $error_msg = "<p>You need to let us know whether you will be attending.</p>";
     }
   }
 }
@@ -79,13 +96,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         include "includes/header.php";
       ?>
 
-<!--       <pre>
-        <?php echo $subject; ?>
-        <?php echo $body; ?>
-        <?php echo "emailSent: $emailSent"; ?>
-        <?php echo "hasError: $error_msg"; ?>
-      </pre>
- -->
       <section id="rsvp">
         <?php if ($emailSent != true) { ?>
         <h1>RSVP</h1>
@@ -94,28 +104,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="error error-summary">
           <h2>Oops! There was a problem</h2>
 
-          <p><?php echo $error_msg ?></p>
+          <?php echo $error_msg ?>
 
+          <?php if ($serverError == true) { ?>
           <p>There was an error sending your RSVP. Please RSVP manually by <a href="mailto:rsvp@alexandella.wedding">sending an email to rsvp@alexandella.wedding</a>.</p>
+          <?php } ?>
         </div>
         <?php } ?>
 
         <form action="" method="post">
           <div class="form-group">
             <label for="name-input" class="form-label">Your name(s)</label>
-            <input type="text" id="name-input" name="form-name" class="form-control">
+            <input type="text" id="name-input" name="form-name" class="form-control" required>
           </div>
 
           <fieldset class="form-group">
             <legend class="form-label">Can you attend?</legend>
 
             <label for="attend-yes-input" class="block-label">
-              <input type="radio" id="attend-yes-input" name="form-attend" value="Yes" class="form-radio">
+              <input type="radio" id="attend-yes-input" name="form-attend" value="Yes" class="form-radio" required>
               Yes. I/We would love to come
             </label>
 
             <label for="attend-no-input" class="block-label">
-              <input type="radio" id="attend-no-input" name="form-attend" value="No" class="form-radio">
+              <input type="radio" id="attend-no-input" name="form-attend" value="No" class="form-radio" required>
               No. Unfortunately I'm/we're not able to make it
             </label>
           </fieldset>
@@ -141,7 +153,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
 
           <div class="form-group">
-            <label for="notes-input" class="form-label">Notes</label>
+            <label for="notes-input" class="form-label">Anything else we need to know?</label>
 
             <textarea name="form-notes" id="notes-input" class="form-text-area"></textarea>
           </div>
