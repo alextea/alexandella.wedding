@@ -11,13 +11,13 @@
       ?>
 
       <section id="home">
-        <h2>When</h2>
+        <h1>When</h1>
 
-        <h3>Ceremony</h3>
+        <h2>Ceremony</h2>
 
         <p>The wedding ceremony begins at 12 noon. Please arrive at 11.30am.</p>
 
-        <h3>Evening reception</h3>
+        <h2>Evening reception</h2>
 
         <p>Evening reception from 6pm until late</p>
 

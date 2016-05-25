@@ -106,7 +106,7 @@ h2 {
   text-transform: uppercase;
   color: $pink;
 
-  margin: $gutter 0 (-$gutter) 0;
+  margin: $gutter 0 0 0;
 
   // mix-blend-mode: multiply;
   z-index: 100;
@@ -120,8 +120,8 @@ h2 {
   }
 }
 
-p + h2 {
-  margin-bottom: 0;
+h2 + h3 {
+  margin-top: -($gutter);
 }
 
 h3 {
