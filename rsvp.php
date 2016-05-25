@@ -166,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php } else { ?>
         <h1>Thank you!</h1>
 
-        <p>Your RSVP is winging it's way to us. We really hope you can make it, and if you're unable to come we hope to see you soon.</p>
+        <p>Your RSVP is winging its way to us. We really hope you can make it, and if you're unable to come we hope to see you soon.</p>
         <?php } ?>
       </section>
 
