@@ -11,5 +11,6 @@
     <li<?php if ($active == "home") { ?> class="active"<?php } ?>><a href="/">When</a></li>
     <li<?php if ($active == "where") { ?> class="active"<?php } ?>><a href="/where">Where</a></li>
     <li<?php if ($active == "rsvp") { ?> class="active"<?php } ?>><a href="/rsvp">RSVP</a></li>
+    <li<?php if ($active == "gifts") { ?> class="active"<?php } ?>><a href="/gifts">Gifts</a></li>
   </ul>
 </nav>
