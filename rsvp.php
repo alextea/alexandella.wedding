@@ -1,7 +1,7 @@
 <?php
 
 require("PHPMailer/PHPMailerAutoload.php");
-require(__DIR__.'/../../email_config.php');
+require(__DIR__.'/../email_config.php');
 
 $email_address = "rsvp@alexandella.wedding";
 
