@@ -18,8 +18,6 @@
         <p>For those of you that would like to mark the occasion with a gift, a contribution toward our honeymoon in Japan would be amazing!</p>
 
         <p>You can send us the gift <a href="http://paypal.me/alextorrance">via paypal</a>.</p>
-
-        <p>Alternatively please consider making <a href="https://www.royalmarsden.org/single-donation">a donation to the Royal Marsden</a>.</p>
       </section>
 
     </main>
