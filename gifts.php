@@ -19,7 +19,7 @@
 
         <p>You can send us the gift <a href="http://paypal.me/alextorrance">via paypal</a>.</p>
 
-        <p>Alternatively please consider making <a href="https://www.royalmarsden.org/single-donation">a donation to the Royal Marsden</a>.</p>
+        <p>Alternatively please consider making <a href="https://www.royalmarsden.org/special-occasion-donation">a donation to the Royal Marsden</a>.</p>
       </section>
 
     </main>
