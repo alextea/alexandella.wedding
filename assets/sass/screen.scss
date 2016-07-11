@@ -116,8 +116,12 @@ body {
         text-decoration: none;
 
         &:hover {
-          color: white;
+          color: $purple;
         }
+      }
+
+      &.active a {
+        color: $purple;
       }
 
       @include media(tablet) {
